@@ -1,0 +1,32 @@
+<import src="../list_template/list_template" />
+<view class="container">
+<view class="sort">
+    <view catchtap="sortPrice" data-parid="1" data-cataid="{{cata_id}}">
+      <text class="sort_p {{sort==1?'green':''}}">价格</text>
+      <image src="{{select==11?'/images/up.png':'/images/up_un.png'}}" class="sort_image up"></image>
+      <image src="{{select==12?'/images/down.png':'/images/down_un.png'}}" class="sort_image down"></image>
+    </view>
+    <view catchtap="sortHot" data-parid="2" data-cataid="{{cata_id}}">
+      <text class="sort_p {{sort==2?'green':''}}">热度</text>
+      <image src="{{select==21?'/images/up.png':'/images/up_un.png'}}" class="sort_image up"></image>
+      <image src="{{select==22?'/images/down.png':'/images/down_un.png'}}" class="sort_image down"></image>
+    </view>
+    <view catchtap="sortTime" data-parid="3" data-cataid="{{cata_id}}">
+      <text class="sort_p {{sort==3?'green':''}}">时间</text>
+      <image src="{{select==31?'/images/up.png':'/images/up_un.png'}}" class="sort_image up"></image>
+      <image src="{{select==32?'/images/down.png':'/images/down_un.png'}}" class="sort_image down"></image>
+    </view>
+  </view>
+  <block wx:for="{{goods_key}}" wx:for-item="goods">
+    <view catchtap="toDetail" data-postId="{{goods.gid}}">
+      <template is="list_template" data="{{goods}}">
+      </template>
+    </view>
+  </block>
+  <view class="{{not==0?'notview':'hide'}}">
+    <image src="/images/notfound.png" class="notfound"></image>
+    <text>抱歉，没有物品了哦~</text>
+  </view>
+  <image src="/images/back.png" class=" back" catchtap="backIndex"></image>
+  <image src="/images/camera.png" class="publish" catchtap="publishImg"></image>
+</view>

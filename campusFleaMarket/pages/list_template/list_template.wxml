@@ -1,0 +1,31 @@
+<template name="list_template">
+  <view class="list {{goods.gstate==1?'soldout':''}}">
+    <view class='list_left'>
+      <image src="https://wx.gzqskjw.com/small/{{goods.list_image}}" class="list_image"></image>
+      <view class='goods_label'>{{goods.goods_label}}</view>
+    </view>
+    <view class="list_detail">
+      <text class=" goods_name ">{{goods.goods_name}}</text>
+      <view class='timeline'>
+        <text class="goods_time ">{{goods.goods_time}}发布</text>
+        <view class="location">
+          <image src="/images/location.png"></image>
+          <text>{{goods.gcampus}}</text>
+        </view>
+      </view>
+      <view class="goods_value">
+        <text class="goods_price">￥{{goods.goods_price}}</text>
+        <text class='gcost'>￥{{goods.gcost}}</text>
+        <view class='icon_wrap'>
+          <image src="/images/mes.png" class='comment_img'></image>
+          <text class='comment_t'>{{goods.comment_num}}</text>
+        </view>
+        <view class='icon_wrap interline'>
+          <image src="{{goods.goods_like==0?'/images/collect_un.png':'/images/collect.png'}}" class="comment_img"></image>
+          <text class="comment_t">{{goods.collect_num}}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</template>

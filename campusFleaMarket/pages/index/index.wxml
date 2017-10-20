@@ -1,0 +1,56 @@
+<import src="../list_template/list_template" />
+<view class="container">
+  <view class="top_search">
+    <view class="locate" catchtap="selectcity">{{cityname}}
+      <image src="/images/more.png" class="more"></image>
+    </view>
+    <view class='serch_wrap'><image src="/images/sech.png" class="search_img"></image><input type="text" class="search_in" placeholder="请输入商品名称"  placeholder-style='color:#fff' bindconfirm='search' confirm-type='search'/></view>
+  </view>
+  <view class='advertise'>
+  <view class='ad_wrap'catchtap="towenju">
+  <image src='/images/wenju.png'></image>
+  <text>文具</text>
+  </view>
+  <view class='ad_wrap'catchtap="togirl">
+  <image src='/images/woman.png'></image>
+  <text>女生必买</text>
+  </view>
+  <view class='ad_wrap'catchtap="tosport">
+  <image src='/images/sport.png'></image>
+  <text>运动</text>
+  </view>
+  <view class='ad_wrap'catchtap="tozahuo">
+  <image src='/images/zahuo.png'></image>
+  <text>杂货铺</text>
+  </view>
+  </view>
+  <view class="sort">
+    <view catchtap="sortPrice" data-parid="1" data-cataid="{{cata_id}}">
+      <text class="sort_p {{sortnum==1?'green':''}}">价格</text>
+      <image src="{{select==11?'/images/up.png':'/images/up_un.png'}}" class="sort_image up"></image>
+      <image src="{{select==12?'/images/down.png':'/images/down_un.png'}}" class="sort_image down"></image>
+    </view>
+    <view catchtap="sortHot" data-parid="2" data-cataid="{{cata_id}}">
+      <text class="sort_p {{sortnum==2?'green':''}}">热度</text>
+      <image src="{{select==21?'/images/up.png':'/images/up_un.png'}}" class="sort_image up"></image>
+      <image src="{{select==22?'/images/down.png':'/images/down_un.png'}}" class="sort_image down"></image>
+    </view>
+    <view catchtap="sortTime" data-parid="3" data-cataid="{{cata_id}}">
+      <text class="sort_p {{sortnum==3?'green':''}}">时间</text>
+      <image src="{{select==31?'/images/up.png':'/images/up_un.png'}}" class="sort_image up"></image>
+      <image src="{{select==32?'/images/down.png':'/images/down_un.png'}}" class="sort_image down"></image>
+    </view>
+  </view>
+  <block wx:for="{{goods_key}}" wx:for-item="goods">
+    <view catchtap="toDetail" data-postId="{{goods.gid}}">
+      <template is="list_template" data="{{goods}}">
+        </template>
+    </view>
+  </block>
+  <image src="/images/camera.png" class="publish" catchtap="publishImg"></image>
+  <image src="/images/loading.png" class="loading {{isload==0?'hide':''}}"></image>
+  <view class="{{not==0?'notview':'hide'}}">
+    <image src="/images/notfound.png" class="notfound"></image>
+    <text>没有更多了</text>
+  </view>
+</view>

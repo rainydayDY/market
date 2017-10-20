@@ -1,0 +1,50 @@
+<view class="container">
+  <textarea class="goods_name {{view==0?'hide':''}}" placeholder="好好描述，争取卖个好价钱......" bindblur="inputName" />
+  <view class="upload">
+    <block wx:for="{{tempFilePaths}}" wx:for-item="img" wx:for-index="idx">
+      <view class="user_img">
+        <image src="{{img}}" mode="aspectFill" class="select_img"></image>
+        <image src="/images/cha.png" class="cha" catchtap="deleteImg" data-imgid="{{idx}}"></image>
+      </view>
+    </block>
+    <view class="user_img {{uploadshow==0?'hide':''}}">
+      <image src="/images/camera_un.png" class="upload_img" catchtap="uploadImg">
+      </image>
+    </view>
+  </view>
+  <view class="select_type">
+    <button type="primary" catchtap="selectType">{{btn}}</button>
+    <input type="text" placeholder="价格" bindinput="inputPrice" />
+    <input type="text" placeholder="原价" bindinput="inputgcost" />
+  </view>
+  <view class="label_view">
+    <text>加上标签，100%卖出去~</text>
+    <input type="text" placeholder="言简意赅，不逾10字，才更醒目" class="label_input" value="{{labelview}}" bindinput="inputLabel" bindinput="checknum" maxlength="10" disable="{{disable==0?true:false}}" />
+  </view>
+  <view class="button">
+    <button type="default" class="publish left" catchtap="backIndex">取消</button>
+    <button type="primary" class="publish right" catchtap="publishgoods">发布</button>
+  </view>
+  <view class="layer {{view==0?'':'hide'}}">
+    <view class="typeview {{viewIndex==0?'':'hide'}}" catchtap="hidelayer">
+      <view class="type_top">
+        <view class="typetitle firsttype" catchtap="showFirst">{{firstname}}</view>
+        <view class="typetitle secondtype" catchtap="showSecond">{{secondname}}</view>
+      </view>
+      <block wx:for="{{categoryList}}" wx:for-item="firstList">
+        <view class="typelabel" catchtap="selectCategory" data-parid="{{firstList.cata_id}}" data-parname="{{firstList.cata_name}}">{{firstList.cata_name}}</view>
+      </block>
+    </view>
+    <block wx:for="{{categoryList}}" wx:for-item="secondList">
+      <view class="typeview {{viewIndex==secondList.cata_id?'':'hide'}}" catchtap="hidelayer">
+        <view class="type_top">
+          <view class="typetitle firsttype" catchtap="showFirst">{{firstname}}</view>
+          <view class="typetitle secondtype" catchtap="showSecond">{{secondname}}</view>
+        </view>
+        <block wx:for="{{secondList.cata_child}}" wx:for-item="childList">
+          <view class="typelabel" catchtap="toList" data-typeid="{{childList.cata_id}}" data-typename="{{childList.cata_name}}">{{childList.cata_name}}</view>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="search">
+    <input type="text" placeholder="请输入物品名称" class="search_input {{focus==0?'active':''}}" bindinput="bindblur" bindfocus="bindfocus" data-id="0" />
+    <image src="/images/search.png" class="search_img" catchtap="search"></image>
+  </view>
+  <block wx:for="{{goods_key}}" wx:for-item="goods">
+    <view catchtap="toDetail" data-postId="{{goods.gid}}">
+      <view class="list {{goods.gstate==1?'soldout':''}}">
+        <image src="/images/soldout.png" class="{{goods.gstate==1?'soldlabel':'hide'}}"></image>
+        <view class='list_left'>
+          <image src="https://wx.gzqskjw.com/small/{{goods.list_image}}" class="list_image"></image>
+        </view>
+        <view class="list_detail">
+          <text class=" goods_name ">{{goods.goods_name}}</text>
+          <view class="goods_line">
+            <text class="goods_time ">{{goods.goods_time}}</text>
+            <image src="/images/delete.png" catchtap="deleteGoods" data-gid="{{goods.gid}}" data-goodsindex="{{index}}"></image>
+            <image src="{{goods.gstate==1?'/images/putaway.png':'/images/sold.png'}}" catchtap="changeState" data-state="{{goods.gstate}}" data-gid="{{goods.gid}}" data-goodsindex="{{index}}"></image>
+          </view>
+          <view class="goods_value">
+            <text class="goods_price">￥{{goods.goods_price}}</text>
+            <text class='gcost'>￥{{goods.gcost}}</text>
+            <view class='icon_wrap'>
+              <image src="/images/mes.png" class='comment_img'></image>
+              <text class='comment_t'>{{goods.comment_num}}</text>
+            </view>
+            <view class='icon_wrap interline'>
+              <image src="{{goods.goods_like==0?'/images/collect_un.png':'/images/collect.png'}}" class="comment_img"></image>
+              <text class="comment_t">{{goods.collect_num}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="{{not==0?'notview':'hide'}}">
+    <image src="/images/notfound.png" class="notfound"></image>
+    <text>抱歉，没有物品了哦~马上去发布</text>
+    <image src="/images/camera.png" class="publish" catchtap="publishImg"></image>
+  </view>
+</view>

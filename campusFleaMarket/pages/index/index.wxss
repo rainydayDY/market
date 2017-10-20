@@ -1,0 +1,146 @@
+@import "../list_template/list_template.wxss";
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+text{
+    font-family: Microsoft Yahei;
+}
+.top_search{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height:120rpx;
+  background-color: #55d896;
+  box-sizing: border-box;
+  vertical-align: middle;
+  padding:40rpx 20rpx 20rpx;
+}
+.serch_wrap{
+   width: 360rpx;
+  height:60rpx;
+  background: rgba(255,255,255,0.2);
+  padding:0 20rpx;
+   box-sizing: border-box;
+    border-radius: 8rpx;
+    line-height: 60rpx;
+}
+.search_in{
+  display: inline-block;
+  width: 260rpx;
+  height:40rpx;
+  font-size: 28rpx;
+  color:white;
+  vertical-align: middle;
+  margin-left: 20rpx; 
+}
+.search_img{
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+.locate{
+  width:350rpx;
+  height: 60rpx;
+  color:white;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+.more{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.advertise{
+   display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40rpx 10rpx;
+    height:240rpx;
+}
+.ad_wrap{
+  width: 122rpx;
+  margin: auto 30rpx;
+  height: 160rpx;
+  text-align: center;
+}
+.ad_wrap>image{
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+  margin:auto;
+}
+.ad_wrap>text{
+  font-size: 28rpx;
+  margin-top: 30rpx;
+}
+.sort{
+    display: flex;
+    flex-direction: row;
+    height:80rpx;
+     border: 1rpx solid #e7e7eb;
+}
+.sort_image{
+    width:28rpx;
+    height:28rpx;
+}
+.up{
+    position: absolute;
+    left:160rpx;
+    top:18rpx;
+}
+.down{
+    position: absolute;
+    left:160rpx;
+    bottom:18rpx;
+}
+.sort>view{
+    width:250rpx;
+    line-height: 80rpx;
+    position: relative;
+    /*border-right:1rpx solid #e7e7eb;*/
+}
+.sort_p{
+    font-size: 30rpx;
+    margin-left: 80rpx;
+}
+.publish{
+    position: fixed;
+    bottom:20rpx;
+    right:20rpx;
+    width:80rpx;
+    height:80rpx;
+    z-index: 99;
+}
+.green{
+    color:#55d896;
+}
+.hide{
+    display: none;
+}
+.loading{
+    width:96rpx;
+    height:96rpx;
+}
+.notview{
+    width:100%;
+    height:auto;
+    text-align: center;
+}
+.notfound{
+    display: inline-block;
+    margin-top: 200rpx;
+    width:256rpx;
+    height:256rpx;
+}
+.notview>text{
+    display: inline-block;
+    width:100%;
+    text-align: center;
+    font-size: 32rpx;
+}

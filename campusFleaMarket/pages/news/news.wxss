@@ -1,0 +1,103 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+text {
+  font-family: Microsoft Yahei;
+}
+
+.news_list {
+  width: 710rpx;
+  border-bottom: 1rpx solid #e7e7eb;
+  padding: 20rpx;
+  position: relative;
+  height:70rpx;
+}
+.unread{
+  width:10rpx;
+  height:10rpx;
+  border-radius: 6rpx;
+  background-color: #d81e06;
+  margin-top: 30rpx;
+}
+.touxiang {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 10rpx;
+}
+
+.userinfo {
+  width: 620rpx;
+  height: 30rpx;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.mes_name {
+  font-size: 28rpx;
+  line-height: 30rpx;
+  color: #576b95;
+}
+
+.pub_time {
+  color: #888;
+  font-size: 24rpx;
+  line-height: 30rpx;
+}
+
+.message {
+  display: block;
+  width: 600rpx;
+  height: auto;
+  font-size: 28rpx;
+  line-height: 30rpx;
+  padding:10rpx;
+}
+.notfound{
+  width:600rpx;
+  height:auto;
+}
+.notfound>image{
+  width:128rpx;
+  height:128rpx;
+  margin-left: 268rpx;
+  margin-top: 30rpx;
+}
+.notfound>text{
+  display: block;
+  width:100%;
+  height:40rpx;
+  margin-top: 16rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color:#576b95;
+}
+.not{
+  display: none;
+}
+.publish{
+    position: fixed;
+    bottom:20rpx;
+    right:20rpx;
+    width:80rpx;
+    height:80rpx;
+    z-index: 99;
+}
+.back{
+    position: fixed;
+    bottom:120rpx;
+    right:20rpx;
+    width:80rpx;
+    height:80rpx;
+    z-index: 99;
+}

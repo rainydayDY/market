@@ -1,0 +1,118 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+text{
+    font-family: Microsoft Yahei;
+    font-size: 30rpx;
+    color:#353535;
+}
+.touxiang_area{
+    width:700rpx;
+    padding: 20rpx;
+    height:500rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid #e7e7eb;
+}
+.wire{
+    margin-top: 50rpx;
+    width:150rpx;
+    height: 150rpx;
+    z-index:2;
+}
+.touxiang_view{
+    margin-top: -40rpx;
+     width:200rpx;
+     height: 200rpx;
+     border-radius: 100%;
+     border: 1px solid #ebebeb;
+    overflow: hidden;     
+}
+.touxiang_view>image{
+    width:100%;
+    height: 100%;
+}
+.touxiang_area>text{
+    margin-top: 20rpx;
+}
+.info_list{
+     width:700rpx;
+     padding: 20rpx;
+     height: auto;
+     display: flex;
+     flex-direction: row;
+      border-bottom: 1rpx solid #e7e7eb;
+      line-height: 64rpx;
+}
+.info_list>image{
+    width:64rpx;
+    height: 64rpx;
+    margin-right: 40rpx;
+}
+.publish{
+    position: fixed;
+    bottom:20rpx;
+    right:20rpx;
+    width:80rpx;
+    height:80rpx;
+    z-index: 99;
+}
+.label_input{
+    width:560rpx;
+    height:40rpx;
+    border: 1px solid #09bb07;
+    border-radius: 4px;
+    line-height: 80rpx;
+    text-align: left;
+    margin-top: 60rpx;
+    font-family: Microsoft Yahei;
+    padding: 20rpx;
+    font-size: 34rpx;
+    color:#888888;
+}
+.layer{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 99;
+}
+.modal{
+  width:600rpx;
+  height:300rpx;
+  background: white;
+  border-radius: 10rpx;
+  margin-top: 200rpx;
+  margin-left: 45rpx;
+  padding: 30rpx;
+}
+.btn_line{
+  width:600rpx;
+  height:100rpx;
+  margin-top: 60rpx;
+}
+.btn_line>button{
+  width:180rpx;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.hide{
+  display: none;
+}
+.active{
+   box-shadow: 1px -1px 2px #338d01;
+}
+.red{
+  color: #e64340;
+}

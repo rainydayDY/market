@@ -1,0 +1,127 @@
+text{
+    font-family: Microsoft Yahei;
+}
+.list{
+    width:750rpx;
+    display: flex;
+    flex-direction: row;
+     border-bottom: 1rpx solid #e7e7eb;
+    padding: 30rpx 0;
+    position: relative;
+}
+.soldout{
+  background-color: #e7e7eb;
+}
+.soldlabel{
+  position: absolute;
+  top:0;
+  right:0;
+  width: 100rpx;
+  height:100rpx;
+  z-index: 10;
+}
+.list_left{
+  margin-left: 20rpx;
+  width:260rpx;
+  height:auto;
+  position: relative;
+}
+.list_image{
+  width:260rpx;
+  height:250rpx;
+}
+.list_detail{
+    margin-left: 20rpx;
+    flex-direction: column;
+    width:430rpx;
+    position: relative;
+}
+.goods_name{
+    font-size: 30rpx;
+    display: block;
+    width:100%;
+    color:#333;
+    line-height: 44rpx;
+    text-align: justify;
+}
+.timeline{
+  width:100%;
+  height: 40rpx;
+  margin-top: 30rpx;
+  line-height: 40rpx;
+}
+.goods_time{
+  float: left;
+  color:#888888;
+  font-size: 24rpx;
+}
+.location{
+   float: right;
+   display: inline-block;
+   width:auto;
+   height:40rpx;
+}
+.location>image{
+  width: 24rpx;
+  height: 24rpx;
+  vertical-align: middle;
+}
+.location>text{
+  line-height: 30rpx;
+  margin-left: 6rpx;
+  font-size: 24rpx;
+  color:#888888;
+  vertical-align: middle;
+}
+.goods_label{
+   position: absolute;
+   width:auto;
+   padding: 10rpx ;
+   background: rgba(0,0,0,0.7) ;
+   font-size: 22rpx;
+   right:0;
+   top:0;
+   color:#fff;
+   font-family: Microsoft Yahei;
+}
+.goods_value{
+  position: absolute;
+  bottom: 10rpx;
+  left:0;
+  display: table-cell;
+  vertical-align: bottom;
+  width:100%;
+  height: 40rpx;
+}
+.goods_price{
+    color:red;
+    font-size: 36rpx;
+    font-weight: bolder;
+}
+.gcost{
+  color:#777777;
+  font-size: 24rpx;
+  text-decoration:line-through;
+  margin-left: 20rpx;
+}
+.icon_wrap{
+  display: inline-block;
+  float: right;
+}
+.interline{
+  margin-right: 30rpx;
+}
+.comment_img{
+    width:32rpx;
+    height:32rpx;
+    margin-right: 10rpx;
+    vertical-align: middle;
+}
+.comment_t{
+  font-size: 28rpx;
+  color:#888888;
+   vertical-align: middle;
+}
+.hide{
+  display: none;
+}

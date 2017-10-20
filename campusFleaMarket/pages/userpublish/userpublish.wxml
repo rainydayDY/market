@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="publisher">
+    <view class="pupic">
+      <image src="{{goods.pupic}}" class="userpic"></image>
+      <image src="{{goods.psex==1?'/images/boy.png':'/images/girl.png'}}" class="sex"></image>
+    </view>
+    <view class="usergrade">
+    <image src="/images/grade.png" class="grade"></image>
+      <text>信用积分：{{goods.pgrade}}</text>
+    </view>
+  </view>
+  <view class="goods_name">
+    <text>{{goods.goods_name}}
+      <text class="pub_time right">{{goods.goods_time}}</text>
+    </text>
+  </view>
+  <view class="label_view">
+    <view class="goods_label">{{goods.goods_label}}</view>
+    <text class="goods_price">￥{{goods.goods_price}}</text>
+  </view>
+  <view class="pic_view">
+    <block wx:for="{{goods. imgUrl}}" wx:for-item="imgUrl">
+      <image src="{{small}}{{imgUrl}}" data-nowurl="{{imgUrl}}" data-urllist="{{goods.gpic}}" catchtap="previewImg"></image>
+    </block>
+  </view>
+  <view class="value_view">
+    <view class="check_btn" data-user="{{goods.uid}}" catchtap="checkUser">查看卖家信息</view>
+    <image src="{{goods_like==0?'/images/collect_un.png':'/images/collect.png'}}" class="collect" data-tid="{{goods.postId}}" catchtap="collectGoods"></image>
+    <text class="collect_num">{{collect_num}}</text>
+    <view class="message_btn">留言</view>
+  </view>
+  <view class="collect_view">
+    <image src="../../images/collect_un.png"></image>
+    <view class="collect_line">
+      <block wx:for="{{collect_img}}" wx:for-item="touxiang">
+        <image src="{{touxiang.upic}}" class="collect_user"></image>
+      </block>
+    </view>
+  </view>
+  <view class="collect_view">
+    <image src="../../images/mes.png"></image>
+    <block wx:for="{{goods.comment}}" wx:for-item="commentlist">
+      <view class="collect_line comment_line">
+        <image src="{{commentlist.cimg}}" class="mes_user left"></image>
+        <view class="message_view right">
+          <text class="mes_name left">{{commentlist.cname}}</text>
+          <text class="pub_time right">{{commentlist.ctime}}</text>
+        </view>
+        <text class="message right">{{commentlist.cmessage}}</text>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="type">
+    <view class="first_type">
+    <block wx:for="{{categoryList}}" wx:for-item="firstList">
+      <view class="first_list {{viewIndex==firstList.cata_id?'select':''}}"  catchtap="selectCategory" data-parid="{{firstList.cata_id}}">{{firstList.cata_name}}</view>
+      </block>
+    </view>
+    <block wx:for="{{categoryList}}" wx:for-item="secondList">
+     <view class="second_type {{viewIndex==secondList.cata_id?'show':''}}">
+      <block wx:for="{{secondList.cata_child}}" wx:for-item="childList">
+            <view class="second_view" catchtap="toList" data-typeid="{{childList.cata_id}}">
+              <image src="{{pic}}{{childList.cata_img}}" class="view_img" catchtap="toList" data-typeid="{{childList.cata_id}}"></image>
+              <text class="view_text" catchtap="toList" data-typeid="{{childList.cata_id}}">{{childList.cata_name}}</text>
+            </view>
+      </block>
+    </view>
+    </block>
+  </view>
+  <image src="/images/camera.png" class="publish" catchtap="publishImg"></image>
+</view>

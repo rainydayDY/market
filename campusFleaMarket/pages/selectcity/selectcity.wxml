@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="locate_layer">
+    <view class="white_bg gpsline">{{gcity}}<text class="gray_text">GPS定位</text></view>
+    <text class="marginleft">已开通{{hascity}}</text>
+    <view class="city_wrap">
+    <view class="white_bg" catchtap="selectcampus" data-sname="{{gcity}}">全城</view>
+      <block wx:for="{{citylist}}" wx:for-item="city">
+      <view class="white_bg" catchtap="selectcampus" data-sid="{{city.sid}}"data-sname="{{city.sname}}">{{city.sname}}</view>
+      </block>
+    </view>
+  </view>
+</view>

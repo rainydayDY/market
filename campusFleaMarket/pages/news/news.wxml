@@ -1,0 +1,19 @@
+<view class="container">
+ <view class="notfound {{view==1?'':'not'}}">
+    <image src="/images/nomess.png"></image>
+    <text>您目前还没有消息哦~</text>
+  </view>
+  <block wx:for="{{newslist}}" wx:for-item="news">
+    <view class="news_list" catchtap="todetail" data-postid="{{news.gid}}">
+    <view class="left {{news.ischeck==0?'unread':''}}"></view>
+      <image src="{{news.upic}}" class="touxiang left"></image>
+      <view class="userinfo right">
+        <text class="mes_name left">{{news.uname}}</text>
+        <text class="pub_time right">{{news.ntime}}</text>
+      </view>
+      <text class="message left">{{news.news_type}}{{news.content}}</text>
+    </view>
+  </block>
+  <image src="/images/back.png" class=" back" catchtap="backIndex"></image>
+  <image src="/images/camera.png" class="publish" catchtap="publishImg"></image>
+</view>

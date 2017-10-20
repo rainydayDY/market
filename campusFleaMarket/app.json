@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/publish/publish",
+    "pages/category/category",
+    "pages/register/register",
+    "pages/detail/detail",
+    "pages/completeInfo/completeInfo",
+    "pages/userInfo/userInfo",
+    "pages/list/list",
+    "pages/userpublish/userpublish",
+    "pages/message/message",
+    "pages/hotlist/hotlist",
+    "pages/news/news",
+    "pages/usercenter/usercenter",
+    "pages/mypublish/mypublish",
+    "pages/selectcity/selectcity"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#55d896",
+    "backgroundColor":"#55d896",
+    "backgroundTextStyle":"dark",
+    "navigationBarTitleText": "大四一条街",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": "true"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index_un.png",
+        "selectedIconPath": "images/index.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "images/category_un.png",
+        "selectedIconPath": "images/category.png"
+      },
+      {
+        "pagePath": "pages/userInfo/userInfo",
+        "text": "个人中心",
+        "iconPath": "images/user_un.png",
+        "selectedIconPath": "images/user.png"
+      }
+    ]
+  }
+}

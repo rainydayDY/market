@@ -1,0 +1,47 @@
+<view class="container">
+  <view class="background_wall">
+    <image src="{{userinfo.upic}}"></image>
+    <view class="sixin" catchtap="sendmsg">
+      <!-- <image src="/images/sixin.png"></image>
+      <text>给ta留言...</text> -->
+    </view>
+    <view class="heart_wrap">
+      <view class="heart_left" catchtap="contacta"></view>
+      <view class="heart_right" catchtap="contacta"></view>
+      <text class="contact" catchtap="contacta">联系ta</text>
+    </view>
+  </view>
+  <view class="herinfo">
+    <view class="hername">{{userinfo.uname}}</view>
+    <view class="herschool">{{userinfo.ucampus}}{{userinfo.schoolage}}级{{userinfo.sex==2?'学妹':'学弟'}}</view>
+    <view class="her_achieve">
+      <view class="icon_wrap">
+        <image src="/images/grade.png"></image>
+        <text>{{userinfo.ugrade}}</text>
+      </view>
+      <view class="icon_wrap">
+        <image src="/images/collect_un.png"></image>
+        <text>{{collectnum.collectnum}}</text>
+      </view>
+      <view class="icon_wrap">
+        <image src="/images/camera_un.png"></image>
+        <text>{{pubnum}}</text>
+      </view>
+    </view>
+  </view>
+  <block wx:for="{{goodsinfo}}" wx:for-item="goods">
+    <view catchtap="toDetail" data-postId="{{goods.gid}}">
+      <view class="pubulish_wrap">
+        <view class="p_date">{{goods.pdate}}<text class="p_month">{{goods.pmonth}}月</text></view>
+        <view class="p_img">
+          <image src="{{small}}{{goods.gimg}}"></image>
+        </view>
+        <view class="p_descrip">{{goods.goods_name}}
+          <view class="p_num">共{{goods.picnum}}张</view>
+        </view>
+
+      </view>
+    </view>
+    </block>
+
+</view>

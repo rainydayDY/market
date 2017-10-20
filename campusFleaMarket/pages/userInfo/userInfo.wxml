@@ -1,0 +1,65 @@
+<view class="container">
+  <view class="touxiang_area">
+    <image src="/images/wire.png" class="wire"></image>
+    <view class="touxiang_view">
+      <image src="{{upic}}" catchtap="changePic"></image>
+    </view>
+    <text catchtap="changeName">{{uname}}</text>
+    <text>信用积分：{{ugrade}}</text>
+  </view>
+  <view class="info_list" catchtap="changeRoom">
+    <image src="/images/location.png"></image>
+    <text>{{uroom}}</text>
+  </view>
+  <view class="info_list" catchtap="changeWexin">
+    <image src="/images/wechat.png"></image>
+    <text>{{uwechat}}</text>
+  </view>
+  <view class="info_list" catchtap="changeTel">
+    <image src="/images/phone.png"></image>
+    <text>{{uphone}}</text>
+  </view>
+  <view class="info_list" catchtap="tonews">
+    <image src="/images/message.png"></image>
+    <text class="{{userinfo.count==0?'':'red'}}">您有{{userinfo.count}}条新消息</text>
+  </view>
+  <view class="info_list" catchtap="touserCollect">
+    <image src="/images/like.png"></image>
+    <text>我的收藏</text>
+  </view>
+  <view class="info_list" catchtap="touserPublish">
+    <image src="/images/camera.png"></image>
+    <text>我的发布</text>
+  </view>
+  <view class="layer {{view==0?'':'hide'}}">
+    <view class="modal {{viewIndex==1?'':'hide'}}">
+      <input type="text" class="label_input active"  bindinput="bindblur"  value="{{uname}}"  data-viewid="0"/>
+      <view class="btn_line">
+        <button type="default" class="left" catchtap="cancel">取消</button>
+        <button type="primary" class="right" catchtap="submitName">确定</button>
+      </view>
+    </view>
+    <view class="modal {{viewIndex==2?'':'hide'}}">
+      <input type="text" class="label_input active"  bindinput="bindblur" value="{{userinfo.uroom}}" data-viewid="1"/>
+      <view class="btn_line">
+        <button type="default" class="left" catchtap="cancel">取消</button>
+        <button type="primary" class="right" catchtap="submitRoom">确定</button>
+      </view>
+    </view>
+    <view class="modal {{viewIndex==3?'':'hide'}}">
+      <input type="text" class="label_input active"  bindinput="bindblur" value="{{userinfo.uwechat}}"  data-viewid="2"/>
+      <view class="btn_line">
+        <button type="default" class="left" catchtap="cancel">取消</button>
+        <button type="primary" class="right" catchtap="submitWeixin">确定</button>
+      </view>
+    </view>
+    <view class="modal {{viewIndex==4?'':'hide'}}">
+      <input type="text" class="label_input active"  bindinput="bindblur" value="{{userinfo.uphone}}" data-viewid="3"/>
+      <view class="btn_line">
+        <button type="default" class="left" catchtap="cancel">取消</button>
+        <button type="primary" class="right" catchtap="submitTel">确定</button>
+      </view>
+    </view>
+  </view>
+  <image src="/images/camera.png" class="publish" catchtap="publishImg"></image>
+</view>

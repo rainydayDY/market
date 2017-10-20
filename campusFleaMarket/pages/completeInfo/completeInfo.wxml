@@ -1,0 +1,13 @@
+<view class="container">
+<form bindsubmit="submitInfo"  class="container">
+    <input type="text" placeholder="微信号" confirm-type="done" name="wechat"/>
+    <input type="number" placeholder="手机号" confirm-type="done" name="phone" maxlength="11"/>
+    <input type="text" placeholder="学校" confirm-type="done" name="ucampus"/>
+    <input type="number" placeholder="入学年份，如2017" confirm-type="done"name="schoolage" maxlength="4"/>
+    <input type="text" placeholder="学校所在城市" confirm-type="done" name="ucity"/>
+    <input type="text" placeholder="宿舍号：如东区2舍319" confirm-type="done" name="room"/>
+    <button form-type="submit" class="submit">提交</button>
+  </form>
+  <button type="primary" catchtap="backIndex">返回首页</button>
+  </view>
+  

@@ -1,0 +1,7 @@
+<view class="container">
+  <textarea class="content" placeholder="说点什么..." bindinput="inputmsg"/>
+  <view class="btnline">
+    <button type="default" class="publish left" catchtap="backdetail">取消</button>
+    <button type="primary" class="publish right" catchtap="sendmsg">发送</button>
+  </view>
+</view>

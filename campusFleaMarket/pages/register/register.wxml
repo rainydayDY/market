@@ -1,0 +1,22 @@
+
+<!--index.wxml-->
+<view class="container">
+  <view class="logo_line">
+    <image src="/images/logo.png" class="logo"></image>
+    <image src="/images/logo_p.png" class="logo_p"></image>
+  </view>
+  <view class="identity" bindtap="selectIdentity">
+    <button class="{{tabArr.btnIndex==0?'btn_select':'btn_unselect'}}" data-id="0">学生</button>
+    <button class="{{tabArr.btnIndex==1?'btn_select':'btn_unselect'}}" data-id="1">非学生</button>
+  </view>
+  <view class="{{tabArr.viewIndex==0?'stu_select':'stu_unselect'}}">
+    <input type="text" placeholder="学号" maxlength="12" class="long_input {{focus==0?'active':''}}" bindfocus="bindfocus" data-id="0" />
+    <input type="text" placeholder="姓名" class="long_input sec_input {{focus==1?'active':''}}" bindfocus="bindfocus" data-id="1" />
+  </view>
+  <view class="{{tabArr.viewIndex==1?'stu_select':'stu_unselect'}}">
+    <input type="text" placeholder="手机号" maxlength="11" class="long_input {{focus==2?'active':''}}" bindfocus="bindfocus" data-id="2" />
+    <input type="number" class="vertify_code {{focus==3?'active':''}}" placeholder="短信验证码" bindfocus="bindfocus" data-id="3" />
+    <button class="get_code">获取验证码</button>
+  </view>
+  <button class="enter" type="primary">进入</button>
+</view>
