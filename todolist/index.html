@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>引用vue外部文件的项目</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="app">
+    <fieldset>
+        <legend>todoList</legend>
+        <div class="list_box" id="app">
+            <input type="text" class="listname" v-model="message"></input><button @click="addlist">添加</button>
+            <ul class="list">
+                <li v-for="(list,index) in listarray" v-bind:class="[list.showall?'hidden':'lishow']">
+                    <span class="se_box" v-bind:class="[list.ischeck?'check':'']" @click="done(list)"></span>
+                    <span class="content" v-bind:class="[list.ischeck?'pcheck':'']">{{list.content}}</span>
+                    <button @click="deletelist(index)">删除</button></li>
+            </ul>
+            <button @click="toogleshow">{{pbtn?'隐藏所有未完成':'显示所有未完成'}}</button>
+            <button @click="deleteall">清除所有未完成</button>
+        </div>
+    </fieldset>
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            listarray:[{
+                content:'十里河下车行不行'
+            },{
+                content:'绿萝要记得浇水哦，垃圾记得到哦'
+            }],
+            message:'',
+            pbtn:true
+        },
+        methods:{
+            addlist:function(){
+                var obj={content:this.message}
+                this.listarray.push(obj);
+                this.message='';
+            },
+            done:function(things){
+                if(typeof(things.ischeck)=='undefined'){
+                    Vue.set(things,'ischeck',true)
+                }else {
+                    things.ischeck=!things.ischeck;
+                }
+            },
+            deletelist: function(i){
+                // 删一个数组元素
+                this.listarray.splice(i,1);
+            },
+            toogleshow:function(){
+              var _this=this;
+              //当pbtn为true时，点击效果为隐藏所有已完成的
+              this.listarray.forEach(function(list,index){
+                  if(list.ischeck){
+                    if(typeof(list.showall)=='undefined'){
+                      Vue.set(list,'showall',_this.pbtn)
+                    }else {
+                      list.showall=_this.pbtn;
+                    }
+                  }
+              })
+              this.pbtn=!this.pbtn;
+            },
+            deleteall:function(){
+              var _this=this;
+              var i=this.listarray.length;
+              while (i--) {
+                if(this.listarray[i].ischeck){
+                  console.log(i+'对应数组'+this.listarray[i]);
+                  this.listarray.splice(i,1);
+                }
+              }
+            }
+        }
+    })
+</script>
+</body>
+</html>
